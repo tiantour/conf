@@ -1,43 +1,39 @@
 package conf
 
 import (
+	"flag"
+	"fmt"
 	"log"
 	"os"
 
 	"github.com/BurntSushi/toml"
 )
 
-const path = "public/conf/conf.toml"
-
-// Options Options
-var Options options
-
 type (
-	// options
-	options struct {
-		Server  server  `toml:"server"`
-		DB      db      `toml:"db"`
-		Account account `toml:"account"`
-		Upyun   upyun   `toml:"upyun"`
-		Qiniu   qiniu   `toml:"qiniu"`
-		Weather weather `toml:"weather"`
-		Alidayu alidayu `toml:"alidayu"`
-		Wechat  wechat  `toml:"wechat"`
-		Weibo   weibo   `toml:"weibo"`
-		QQ      qq      `toml:"qq"`
-		Wxpay   wxpay   `toml:"wxpay"`
-		Alipay  alipay  `toml:"alipay"`
-		Unique  unique  `toml:"unique"`
-		RAS     rsa     `toml:"rsa"`
+	data struct {
+		Server   server   `toml:"server"`
+		DB       db       `toml:"db"`
+		Account  account  `toml:"account"`
+		Upyun    upyun    `toml:"upyun"`
+		Qiniu    qiniu    `toml:"qiniu"`
+		Weather  weather  `toml:"weather"`
+		Wechat   wechat   `toml:"wechat"`
+		Weibo    weibo    `toml:"weibo"`
+		QQ       qq       `toml:"qq"`
+		Wxpay    wxpay    `toml:"wxpay"`
+		Alipay   alipay   `toml:"alipay"`
+		RSA      rsa      `toml:"rsa"`
+		Alidayu  alidayu  `toml:"alidayu"`
+		Template template `toml:"template"`
 	}
 	// server
 	server struct {
 		Host   string
 		Port   string
 		Upload string
-		Debug  bool
+		Start  string
 	}
-	// db
+	// DB db
 	db struct {
 		Uname    string
 		Passwd   string
@@ -45,11 +41,12 @@ type (
 	}
 	// account
 	account struct {
-		Secret string
-		Issuer string
-		Avatar string
-		Gender string
-		Salt   string
+		Default int
+		Secret  string
+		Issuer  string
+		Avatar  string
+		Gender  string
+		Salt    string
 	}
 	// upaiyun
 	upyun struct {
@@ -70,18 +67,13 @@ type (
 		ID  string
 		Key string
 	}
-	// alidayu
-	alidayu struct {
-		AppKey      string
-		AppSecret   string
-		SmsTemplate string
-		SmsSign     string
-	}
 	// wechat
 	wechat struct {
-		AppID     string
-		AppSecret string
-		Token     string
+		AppID        string
+		AppSecret    string
+		WebAppID     string
+		WebAppSecret string
+		Token        string
 	}
 	// weibo
 	weibo struct {
@@ -109,20 +101,50 @@ type (
 		Seller    string
 		NotifyURL string
 	}
-	// rsa
+	// alidayu
+	alidayu struct {
+		AppKey    string
+		AppSecret string
+		Template  string
+		Sign      string
+	}
 	rsa struct {
 		PublicKey  string
 		PrivateKey string
 	}
-	// unique
-	unique struct {
-		Table string
+	template struct {
+		Feedback string
+		Stock    string
+		Notice   string
+		Warn     string
+		Material string
+		Report   string
 	}
 )
 
-// 初始化
+// Config config
+var (
+	Data = new(data)
+	conf = flag.String("conf", "", "set config file name")
+)
+
 func init() {
-	_, err := toml.DecodeFile(path, &Options)
+	flag.Parse()
+	if *conf == "" {
+		log.Println("conf file name is null")
+		flag.Usage()
+		os.Exit(1)
+	}
+	env := os.Getenv("ENV")
+	if env != "" {
+		env = fmt.Sprintf(".%s", env)
+	}
+	path := fmt.Sprintf(
+		"../conf/conf.%s%s.toml",
+		*conf,
+		env,
+	)
+	_, err := toml.DecodeFile(path, Data)
 	if err != nil {
 		log.Println(err)
 		os.Exit(1)
