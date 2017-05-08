@@ -28,8 +28,7 @@ type (
 	}
 	// server
 	server struct {
-		Host   string
-		Port   string
+		Domain string
 		Upload string
 		Start  string
 	}
@@ -37,6 +36,8 @@ type (
 	db struct {
 		Uname    string
 		Passwd   string
+		Host     string
+		Port     string
 		Database string
 	}
 	// account
