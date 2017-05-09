@@ -13,6 +13,7 @@ type (
 	data struct {
 		Server   server   `toml:"server"`
 		DB       db       `toml:"db"`
+		Cache    cache    `toml:"cache"`
 		Account  account  `toml:"account"`
 		Upyun    upyun    `toml:"upyun"`
 		Qiniu    qiniu    `toml:"qiniu"`
@@ -29,6 +30,7 @@ type (
 	// server
 	server struct {
 		Domain string
+		Prot   string
 		Upload string
 		Start  string
 	}
@@ -39,6 +41,11 @@ type (
 		Host     string
 		Port     string
 		Database string
+	}
+	// cache
+	cache struct {
+		Host string
+		Port string
 	}
 	// account
 	account struct {
