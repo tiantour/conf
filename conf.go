@@ -9,8 +9,14 @@ import (
 	"github.com/BurntSushi/toml"
 )
 
+var (
+	conf    = flag.String("conf", "", "set config file name")
+	newConf = new(Conf)
+)
+
 type (
-	data struct {
+	// Conf conf
+	Conf struct {
 		Server   server   `toml:"server"`
 		DB       db       `toml:"db"`
 		Cache    cache    `toml:"cache"`
@@ -23,14 +29,13 @@ type (
 		QQ       qq       `toml:"qq"`
 		Wxpay    wxpay    `toml:"wxpay"`
 		Alipay   alipay   `toml:"alipay"`
-		RSA      rsa      `toml:"rsa"`
 		Alidayu  alidayu  `toml:"alidayu"`
 		Template template `toml:"template"`
 	}
 	// server
 	server struct {
 		Domain string
-		Prot   string
+		Port   string
 		Upload string
 		Start  string
 	}
@@ -103,11 +108,11 @@ type (
 	}
 	// alipay
 	alipay struct {
-		AppID     string
-		Partner   string
-		Key       string
-		Seller    string
-		NotifyURL string
+		AppID      string
+		Method     string
+		Gateway    string
+		PublicKey  string
+		PrivateKey string
 	}
 	// alidayu
 	alidayu struct {
@@ -115,10 +120,6 @@ type (
 		AppSecret string
 		Template  string
 		Sign      string
-	}
-	rsa struct {
-		PublicKey  string
-		PrivateKey string
 	}
 	template struct {
 		Feedback string
@@ -130,12 +131,10 @@ type (
 	}
 )
 
-// Config config
-var (
-	Data = new(data)
-	conf = flag.String("conf", "", "set config file name")
-)
-
+// NewConf new conf
+func NewConf() *Conf {
+	return newConf
+}
 func init() {
 	flag.Parse()
 	if *conf == "" {
@@ -145,14 +144,10 @@ func init() {
 	}
 	env := os.Getenv("ENV")
 	if env != "" {
-		env = fmt.Sprintf(".%s", env)
+		env = fmt.Sprintf("%s.", env)
 	}
-	path := fmt.Sprintf(
-		"../conf/conf.%s%s.toml",
-		*conf,
-		env,
-	)
-	_, err := toml.DecodeFile(path, Data)
+	path := fmt.Sprintf("../conf/conf.%s.%stoml", *conf, env)
+	_, err := toml.DecodeFile(path, newConf)
 	if err != nil {
 		log.Println(err)
 		os.Exit(1)
