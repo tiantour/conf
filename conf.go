@@ -113,6 +113,7 @@ type (
 		Gateway    string
 		PublicKey  string
 		PrivateKey string
+		NotifyURL  string
 	}
 	// alidayu
 	alidayu struct {
@@ -138,7 +139,7 @@ func NewConf() *Conf {
 func init() {
 	flag.Parse()
 	if *conf == "" {
-		log.Println("conf file name is null")
+		log.Println("conf file is null")
 		flag.Usage()
 		os.Exit(1)
 	}
