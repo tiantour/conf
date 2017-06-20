@@ -98,6 +98,10 @@ type (
 		AppID     string
 		AppSecret string
 	}
+	mp struct {
+		AppID     string
+		AppSecret string
+	}
 	// wxpay
 	wxpay struct {
 		AppID     string
