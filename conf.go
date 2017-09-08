@@ -27,7 +27,9 @@ type (
 		Wechat   wechat   `toml:"wechat"`
 		Weibo    weibo    `toml:"weibo"`
 		QQ       qq       `toml:"qq"`
+		MP       mp       `toml:"mp"`
 		Wxpay    wxpay    `toml:"wxpay"`
+		Mpay     mpay     `toml:"mpay"`
 		Alipay   alipay   `toml:"alipay"`
 		Alidayu  alidayu  `toml:"alidayu"`
 		Template template `toml:"template"`
@@ -35,6 +37,7 @@ type (
 	// server
 	server struct {
 		Domain string
+		Host   string
 		Port   string
 		Upload string
 		Start  string
@@ -104,20 +107,19 @@ type (
 	}
 	// wxpay
 	wxpay struct {
-		AppID     string
-		AccountID string
-		MchID     string
-		NotifyURL string
-		Key       string
+		MchID string
+		Key   string
+	}
+	// mpay
+	mpay struct {
+		MchID string
+		Key   string
 	}
 	// alipay
 	alipay struct {
 		AppID      string
-		Method     string
-		Gateway    string
 		PublicKey  string
 		PrivateKey string
-		NotifyURL  string
 	}
 	// alidayu
 	alidayu struct {
