@@ -22,6 +22,7 @@ type Conf struct {
 	Alipay  alipay
 	Wxpay   map[string]wxpay
 	Dayu    map[string]dayu
+	Weather weather
 	Free    map[string]service
 	Manager map[string]service
 	User    map[string]service
@@ -78,6 +79,10 @@ type dayu struct {
 	AppKey    string `toml:"app_key"`
 	AppSecret string `toml:"app_secret"`
 	Sign      string
+}
+type weather struct {
+	ID  string
+	Key string
 }
 type service struct {
 	Name string
