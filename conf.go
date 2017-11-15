@@ -15,8 +15,7 @@ type Conf struct {
 	DB      db
 	Cache   cache
 	Token   token
-	UpYun   upyun
-	QiNiu   qiniu
+	Image   map[string]image
 	Wechat  map[string]wechat
 	Weibo   weibo
 	QQ      qq
@@ -48,13 +47,7 @@ type token struct {
 	Secret string
 	Issuer string
 }
-type qiniu struct {
-	Bucket    string
-	Host      string
-	AccessKey string `toml:"access_key"`
-	SecretKey string `toml:"secret_key"`
-}
-type upyun struct {
+type image struct {
 	Bucket string
 	Host   string
 	Uname  string
