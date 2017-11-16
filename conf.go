@@ -34,11 +34,11 @@ type server struct {
 	Env  string
 }
 type db struct {
-	IP     string
-	Port   string
-	DB     string
-	Uname  string
-	Passwd string
+	IP       string
+	Port     string
+	Database string
+	Uname    string
+	Passwd   string
 }
 type cache struct {
 	IP   string
