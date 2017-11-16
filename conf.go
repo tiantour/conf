@@ -1,13 +1,17 @@
 package conf
 
 import (
-	"log"
+	"flag"
+	"fmt"
+	"os"
 
 	"github.com/BurntSushi/toml"
 )
 
-// Path toml path
-var Path = "conf.toml"
+var (
+	data = &Conf{}
+	conf = flag.String("conf", "", "set config file name")
+)
 
 // Conf conf
 type Conf struct {
@@ -89,12 +93,21 @@ type service struct {
 	Port string
 }
 
+func init() {
+	flag.Parse()
+	path := "conf.toml"
+	if *conf != "" {
+		path = fmt.Sprintf("../conf/conf.%s.toml", *conf)
+	}
+	_, err := toml.DecodeFile(path, data)
+	if err != nil {
+		fmt.Print(err)
+		flag.Usage()
+		os.Exit(1)
+	}
+}
+
 // NewConf new conf
 func NewConf() *Conf {
-	result := &Conf{}
-	_, err := toml.DecodeFile(Path, result)
-	if err != nil {
-		log.Fatal(err)
-	}
-	return result
+	return data
 }
