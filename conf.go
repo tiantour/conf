@@ -3,6 +3,7 @@ package conf
 import (
 	"flag"
 	"fmt"
+	"log"
 	"os"
 
 	"github.com/BurntSushi/toml"
@@ -18,6 +19,7 @@ type Conf struct {
 	Server   map[string]server
 	DB       db
 	Cache    cache
+	KV       kv
 	Token    token
 	Image    map[string]image
 	Wechat   map[string]wechat
@@ -48,6 +50,9 @@ type db struct {
 type cache struct {
 	IP   string
 	Port string
+}
+type kv struct {
+	Path string
 }
 type token struct {
 	Secret string
@@ -106,7 +111,7 @@ func init() {
 	}
 	_, err := toml.DecodeFile(path, data)
 	if err != nil {
-		fmt.Print(err)
+		log.Print(err)
 		flag.Usage()
 		os.Exit(1)
 	}
