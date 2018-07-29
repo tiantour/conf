@@ -16,19 +16,20 @@ var (
 
 // Conf conf
 type Conf struct {
-	Server  map[string]server
-	DB      db
-	Cache   cache
-	Token   token
-	Image   map[string]image
-	Wechat  map[string]wechat
-	Weibo   weibo
-	QQ      qq
-	Alipay  alipay
-	Wxpay   map[string]wxpay
-	Mchpay  mchpay
-	Dayu    map[string]dayu
-	Weather weather
+	Server   map[string]server
+	DB       db
+	Cache    cache
+	Token    token
+	Image    map[string]image
+	Wechat   map[string]wechat
+	Weibo    weibo
+	QQ       qq
+	Alipay   alipay
+	Wxpay    map[string]wxpay
+	Mchpay   mchpay
+	Dayu     map[string]dayu
+	Weather  weather
+	Template map[string]template
 }
 type server struct {
 	IP   string
@@ -90,6 +91,10 @@ type dayu struct {
 type weather struct {
 	ID  string
 	Key string
+}
+type template struct {
+	ID   string
+	Name string
 }
 
 func init() {
