@@ -15,15 +15,16 @@ var (
 type data struct {
 	Alipay
 	Cache
+	CB
 	Dayu
 	DB
 	Image
+	Mafengwo
 	Mchpay
 	QQ
 	Server
 	Template
 	Token
-	Unique
 	Weather
 	Wechat
 	Weibo
