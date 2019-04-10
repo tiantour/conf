@@ -23,7 +23,6 @@ type data struct {
 	Mchpay
 	QQ
 	Server
-	Template
 	Token
 	Weather
 	Wechat
