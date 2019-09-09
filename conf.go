@@ -18,11 +18,15 @@ type data struct {
 	CB
 	Dayu
 	DB
+	Device
 	Image
 	Mafengwo
 	Mchpay
+	Power
 	QQ
+	Sensor
 	Server
+	Service
 	Token
 	Weather
 	Wechat
