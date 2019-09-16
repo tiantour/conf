@@ -13,6 +13,7 @@ func NewDevice() *Device {
 type device struct {
 	IDC      int32  `toml:"idc"`      // 机房
 	Model    int32  `toml:"model"`    // 型号
+	Name     string `toml:"name"`     // 名称
 	Address  string `toml:"address"`  // 地址
 	BaudRate int    `toml:"baudrate"` // 波特率
 	DataBits int    `toml:"databits"` // 数据位
