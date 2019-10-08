@@ -2,7 +2,7 @@ package conf
 
 // Power power
 type Power struct {
-	Power []power `toml:"power"`
+	Data []power `toml:"power"`
 }
 
 // NewPower new power
