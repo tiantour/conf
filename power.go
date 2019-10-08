@@ -11,11 +11,13 @@ func NewPower() *Power {
 }
 
 type power struct {
-	Name    string  `toml:"name"`    // 备注
-	Point   string  `toml:"point"`   // 点位
-	Uint    string  `toml:"unit"`    // 单位
-	Min     float64 `toml:"min"`     // 最大
-	Max     float64 `toml:"max"`     // 最小
-	Warning float64 `toml:"warning"` // 报警
-	SlaveID byte    `toml:"slaveid"` // 站号
+	Name     string  `toml:"name"`     // 备注
+	SlaveID  byte    `toml:"slaveid"`  // 站号
+	Function uint16  `toml:"function"` // 功能
+	Address  uint16  `toml:"address"`  // 地址
+	Quantity uint16  `toml:"quantity"` // 数量
+	Uint     string  `toml:"unit"`     // 单位
+	Min      float64 `toml:"min"`      // 最大
+	Max      float64 `toml:"max"`      // 最小
+	Warning  float64 `toml:"warning"`  // 报警
 }
