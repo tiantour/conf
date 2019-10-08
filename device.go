@@ -19,5 +19,5 @@ type device struct {
 	DataBits int    `toml:"databits"` // 数据位
 	Parity   string `toml:"parity"`   // 校验位
 	StopBits int    `toml:"stopbits"` // 停止位
-	SlaveId  byte   `toml:"slaveid"`  // 站号
+	SlaveID  byte   `toml:"slaveid"`  // 站号
 }
