@@ -17,8 +17,8 @@ type server struct {
 	Address   string  `toml:"address"`   // 链接
 	Uname     string  `toml:"uname"`     // 用户
 	Passwd    string  `toml:"passwd"`    // 密码
+	Target    string  `toml:"target"`    // 目标
 	Community string  `toml:"community"` // 社区
-	Point     string  `toml:"point"`     // 位置
 	Uint      string  `toml:"unit"`      // 单位
 	Min       float64 `toml:"min"`       // 最大
 	Max       float64 `toml:"max"`       // 最小
