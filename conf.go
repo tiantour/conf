@@ -22,6 +22,7 @@ type data struct {
 	Image
 	Mafengwo
 	Mchpay
+	Point
 	Power
 	QQ
 	Sensor
