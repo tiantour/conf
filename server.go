@@ -19,6 +19,7 @@ type server struct {
 	Passwd    string  `toml:"passwd"`    // 密码
 	Target    string  `toml:"target"`    // 目标
 	Community string  `toml:"community"` // 社区
+	Decimal   uint16  `toml:"decimal"`   // 小数
 	Uint      string  `toml:"unit"`      // 单位
 	Min       float64 `toml:"min"`       // 最大
 	Max       float64 `toml:"max"`       // 最小

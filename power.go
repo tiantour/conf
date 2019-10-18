@@ -16,6 +16,7 @@ type power struct {
 	Function uint16  `toml:"function"` // 功能
 	Address  uint16  `toml:"address"`  // 地址
 	Quantity uint16  `toml:"quantity"` // 数量
+	Decimal  uint16  `toml:"decimal"`  // 小数
 	Uint     string  `toml:"unit"`     // 单位
 	Min      float64 `toml:"min"`      // 最大
 	Max      float64 `toml:"max"`      // 最小
