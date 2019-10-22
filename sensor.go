@@ -16,8 +16,9 @@ type sensor struct {
 	SlaveID  byte    `toml:"slaveid"`  // 站号
 	Function uint16  `toml:"function"` // 功能
 	Address  uint16  `toml:"address"`  // 地址
-	Decimal  uint16  `toml:"decimal"`  // 小数
 	Quantity uint16  `toml:"quantity"` // 数量
+	Reverse  uint16  `toml:"reverse"`  // 反转
+	Decimal  uint16  `toml:"decimal"`  // 小数
 	Uint     string  `toml:"unit"`     // 单位
 	Min      float64 `toml:"min"`      // 最大
 	Max      float64 `toml:"max"`      // 最小
