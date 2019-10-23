@@ -18,6 +18,7 @@ type power struct {
 	Quantity uint16  `toml:"quantity"` // 数量
 	Reverse  uint16  `toml:"reverse"`  // 反转
 	Decimal  uint16  `toml:"decimal"`  // 小数
+	Storage  uint16  `toml:"storage"`  // 存储
 	Uint     string  `toml:"unit"`     // 单位
 	Min      float64 `toml:"min"`      // 最大
 	Max      float64 `toml:"max"`      // 最小
