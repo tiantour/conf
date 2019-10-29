@@ -14,7 +14,7 @@ type power struct {
 	SlaveID  byte    `toml:"slaveid"`  // 站号
 	Function uint16  `toml:"function"` // 功能
 	IP       string  `toml:"ip"`       // 地址
-	Location string  `toml:"location"` // 地址
+	Location uint16  `toml:"location"` // 地址
 	Name     string  `toml:"name"`     // 名字
 	Address  uint16  `toml:"address"`  // 地址
 	Quantity uint16  `toml:"quantity"` // 数量
