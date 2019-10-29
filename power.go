@@ -13,7 +13,7 @@ func NewPower() *Power {
 type power struct {
 	SlaveID  byte    `toml:"slaveid"`  // 站号
 	Function uint16  `toml:"function"` // 功能
-	Host     string  `toml:"host"`     // 地址
+	IP       string  `toml:"ip"`       // 地址
 	Location string  `toml:"location"` // 地址
 	Name     string  `toml:"name"`     // 名字
 	Address  uint16  `toml:"address"`  // 地址

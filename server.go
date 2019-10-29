@@ -14,7 +14,7 @@ type server struct {
 	IDC       int32   `toml:"idc"`       // 机房
 	Model     int32   `toml:"model"`     // 型号
 	Name      string  `toml:"name"`      // 备注
-	Address   string  `toml:"address"`   // 链接
+	IP        string  `toml:"ip"`        // 地址
 	Uname     string  `toml:"uname"`     // 用户
 	Passwd    string  `toml:"passwd"`    // 密码
 	Target    string  `toml:"target"`    // 目标
