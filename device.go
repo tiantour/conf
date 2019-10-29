@@ -2,7 +2,7 @@ package conf
 
 // Device device
 type Device struct {
-	Data []device `toml:"device"`
+	Data device `toml:"device"`
 }
 
 // NewDevice new device

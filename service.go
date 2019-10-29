@@ -2,7 +2,7 @@ package conf
 
 // Service service
 type Service struct {
-	Data []service `toml:"service"`
+	Data service `toml:"service"`
 }
 
 // NewService new service

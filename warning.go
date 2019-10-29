@@ -1,16 +1,16 @@
 package conf
 
-// Power power
-type Power struct {
-	Data []power `toml:"power"`
+// Warning warning
+type Warning struct {
+	Data []warning `toml:"warning"`
 }
 
-// NewPower new power
-func NewPower() *Power {
-	return &conf.Power
+// NewWarning new warning
+func NewWarning() *Warning {
+	return &conf.Warning
 }
 
-type power struct {
+type warning struct {
 	SlaveID  byte    `toml:"slaveid"`  // 站号
 	Function uint16  `toml:"function"` // 功能
 	Host     string  `toml:"host"`     // 地址
