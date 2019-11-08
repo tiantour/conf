@@ -20,4 +20,5 @@ type device struct {
 	Parity   string `toml:"parity"`   // 校验位
 	StopBits int    `toml:"stopbits"` // 停止位
 	SlaveID  byte   `toml:"slaveid"`  // 站号
+	IP       string `toml:"ip"`       // IP
 }
