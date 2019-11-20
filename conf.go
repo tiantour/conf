@@ -29,7 +29,6 @@ type data struct {
 	Server
 	Service
 	Token
-	Warning
 	Weather
 	Wechat
 	Weibo
