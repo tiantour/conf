@@ -22,6 +22,7 @@ type sensor struct {
 	Amount   uint16   `toml:"amount"`   // 数量
 	Reverse  uint16   `toml:"reverse"`  // 反转
 	Signed   uint16   `toml:"signed"`   // 符号
+	Integer  uint16   `toml:"integer"`  // 整数
 	Decimal  uint16   `toml:"decimal"`  // 小数
 	Switch   uint16   `toml:"switch"`   // 开关
 	Uint     string   `toml:"unit"`     // 单位
