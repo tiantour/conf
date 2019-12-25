@@ -25,7 +25,7 @@ type sensor struct {
 	Integer  uint16   `toml:"integer"`  // 整数
 	Decimal  uint16   `toml:"decimal"`  // 小数
 	Switch   uint16   `toml:"switch"`   // 开关
-	Uint     []string `toml:"unit"`     // 单位
+	Uint     string   `toml:"unit"`     // 单位
 	Min      float64  `toml:"min"`      // 最大
 	Max      float64  `toml:"max"`      // 最小
 	Warning  float64  `toml:"warning"`  // 报警
