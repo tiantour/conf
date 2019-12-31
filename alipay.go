@@ -2,7 +2,7 @@ package conf
 
 // Alipay alipay
 type Alipay struct {
-	Data alipay `toml:"alipay"`
+	Data map[string]alipay `toml:"alipay"`
 }
 
 // NewAlipay new alipay
