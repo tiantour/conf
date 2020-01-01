@@ -13,5 +13,6 @@ func NewService() *Service {
 type service struct {
 	Sensor string `toml:"sensor"` // 传感器
 	Server string `toml:"server"` // 服务器
-	Power  string `toml:"power"`  // 动力
+	Power  string `toml:"power"`  // 动环
+	Trade  string `toml:"trade"`  // 交易
 }
