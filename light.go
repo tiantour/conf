@@ -2,7 +2,7 @@ package conf
 
 // Light light
 type Light struct {
-	Data light `toml:"light"`
+	Data []light `toml:"light"`
 }
 
 // NewLight new fan

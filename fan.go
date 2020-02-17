@@ -2,7 +2,7 @@ package conf
 
 // Fan fan
 type Fan struct {
-	Data fan `toml:"fan"`
+	Data []fan `toml:"fan"`
 }
 
 // NewFan new fan
