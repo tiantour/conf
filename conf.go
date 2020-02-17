@@ -19,10 +19,9 @@ type data struct {
 	Dayu
 	DB
 	Device
-	Fan
+	Gear
 	GPIO
 	Image
-	Light
 	Mafengwo
 	Mchpay
 	Point
