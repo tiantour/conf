@@ -2,7 +2,7 @@ package conf
 
 // GPIO gpio
 type GPIO struct {
-	Data gpio `toml:"gpio"`
+	Data map[string]gpio `toml:"gpio"`
 }
 
 // NewGPIO new gpio
