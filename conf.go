@@ -19,7 +19,6 @@ type data struct {
 	Dayu
 	DB
 	Device
-	Gear
 	GPIO
 	Image
 	Mafengwo
