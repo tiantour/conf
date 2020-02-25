@@ -2,7 +2,7 @@ package conf
 
 // Mchpay mchpay
 type Mchpay struct {
-	Data mchpay `toml:"mchpay"`
+	Data map[string]mchpay `toml:"mchpay"`
 }
 
 // NewMchpay new mchpay
