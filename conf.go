@@ -14,9 +14,9 @@ var (
 
 type data struct {
 	Alipay
+	Aliyun
 	Cache
 	CB
-	Dayu
 	DB
 	Device
 	Gear
@@ -26,6 +26,7 @@ type data struct {
 	Mchpay
 	Point
 	Power
+	Qiniu
 	QQ
 	Sensor
 	Server
