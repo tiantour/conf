@@ -18,10 +18,12 @@ type data struct {
 	Cache
 	CB
 	DB
-	Device
+	Serial
 	Gear
 	GPIO
+	IDC
 	Image
+	Liquid
 	Mafengwo
 	Mchpay
 	Point

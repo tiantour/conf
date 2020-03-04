@@ -12,6 +12,8 @@ func NewSensor() *Sensor {
 
 // sensor sensor
 type sensor struct {
+	Model    int32    `toml:"model"`    // 型号
+	Device   string   `toml:"device"`   // 设备
 	SlaveID  byte     `toml:"slaveid"`  // 站号
 	Function uint16   `toml:"function"` // 功能
 	IP       string   `toml:"ip"`       // 地址

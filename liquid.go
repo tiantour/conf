@@ -1,16 +1,17 @@
 package conf
 
-// Power power
-type Power struct {
-	Data []power `toml:"power"`
+// Liquid liquid
+type Liquid struct {
+	Data []liquid `toml:"liquid"`
 }
 
-// NewPower new power
-func NewPower() *Power {
-	return &conf.Power
+// NewLiquid new liquid
+func NewLiquid() *Liquid {
+	return &conf.Liquid
 }
 
-type power struct {
+// liquid liquid
+type liquid struct {
 	Model    int32    `toml:"model"`    // 型号
 	Device   string   `toml:"device"`   // 设备
 	SlaveID  byte     `toml:"slaveid"`  // 站号

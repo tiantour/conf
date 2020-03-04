@@ -11,8 +11,8 @@ func NewServer() *Server {
 }
 
 type server struct {
-	IDC       int32   `toml:"idc"`       // 机房
 	Model     int32   `toml:"model"`     // 型号
+	Device    string  `toml:"device"`    // 设备
 	Name      string  `toml:"name"`      // 备注
 	IP        string  `toml:"ip"`        // 地址
 	Uname     string  `toml:"uname"`     // 用户
