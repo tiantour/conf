@@ -1,22 +1,23 @@
 package conf
 
-// Sensor sensor
-type Sensor struct {
-	Data []sensor `toml:"sensor"`
+// Next next
+type Next struct {
+	Data []next `toml:"next"`
 }
 
-// NewSensor new sensor
-func NewSensor() *Sensor {
-	return &conf.Sensor
+// NewNext new next
+func NewNext() *Next {
+	return &conf.Next
 }
 
-// sensor sensor
-type sensor struct {
+// next next
+type next struct {
 	Model    int32    `toml:"model"`    // 型号
 	Device   string   `toml:"device"`   // 设备
 	Port     string   `toml:"port"`     // 端口
-	SlaveID  byte     `toml:"slaveid"`  // 站号
+	IP       string   `toml:"ip"`       // 地址
 	Function uint16   `toml:"function"` // 功能
+	Location uint16   `toml:"location"` // 地址
 	Name     []string `toml:"name"`     // 名字
 	Address  uint16   `toml:"address"`  // 地址
 	Quantity uint16   `toml:"quantity"` // 数量

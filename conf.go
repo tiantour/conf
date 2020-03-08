@@ -18,21 +18,23 @@ type data struct {
 	Cache
 	CB
 	DB
-	Serial
+	Ethernet
 	Gear
 	GPIO
-	IDC
 	Image
 	Liquid
 	Mafengwo
 	Mchpay
+	Next
 	Point
 	Power
 	Qiniu
 	QQ
 	Sensor
+	Serial
 	Server
 	Service
+	Target
 	Token
 	Weather
 	Wechat
