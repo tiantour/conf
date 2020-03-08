@@ -11,7 +11,7 @@ func NewSerial() *Serial {
 }
 
 type serial struct {
-	Address  string `toml:"name"`     // 地址
+	Address  string `toml:"address"`  // 地址
 	BaudRate int    `toml:"baudrate"` // 波特率
 	DataBits int    `toml:"databits"` // 数据位
 	Parity   string `toml:"parity"`   // 校验位
