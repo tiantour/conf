@@ -13,7 +13,7 @@ func NewPower() *Power {
 type power struct {
 	Model    int32    `toml:"model"`    // 型号
 	Device   string   `toml:"device"`   // 设备
-	Port     byte     `toml:"port"`     // 端口
+	Port     string   `toml:"port"`     // 端口
 	SlaveID  byte     `toml:"slaveid"`  // 站号
 	Function uint16   `toml:"function"` // 功能
 	Name     []string `toml:"name"`     // 名字

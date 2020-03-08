@@ -21,6 +21,7 @@ type data struct {
 	Ethernet
 	Gear
 	GPIO
+	IDC
 	Image
 	Liquid
 	Mafengwo
