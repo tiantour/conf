@@ -11,8 +11,6 @@ func NewCommand() *Command {
 }
 
 type command struct {
-	Port     string `toml:"port"`     // 端口
-	IP       string `toml:"ip"`       // 地址
 	SlaveID  byte   `toml:"slaveid"`  // 站号
 	Location uint16 `toml:"location"` // 地址
 	Function uint16 `toml:"function"` // 功能
@@ -21,4 +19,5 @@ type command struct {
 	Value    []byte `toml:"value"`    // 数值
 	Uname    string `toml:"uname"`    // 用户
 	Passwd   string `toml:"passwd"`   // 密码
+	Code     string `toml:"cmd"`      // 命令
 }
