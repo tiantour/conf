@@ -17,6 +17,7 @@ type data struct {
 	Aliyun
 	Cache
 	CB
+	Command
 	DB
 	Ethernet
 	Gear
