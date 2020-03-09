@@ -16,7 +16,7 @@ type command struct {
 	Function uint16 `toml:"function"` // 功能
 	Address  uint16 `toml:"address"`  // 地址
 	Quantity uint16 `toml:"quantity"` // 数量
-	Value    []byte `toml:"value"`    // 数值
+	Value    byte   `toml:"value"`    // 数值
 	Uname    string `toml:"uname"`    // 用户
 	Passwd   string `toml:"passwd"`   // 密码
 	Code     string `toml:"cmd"`      // 命令
