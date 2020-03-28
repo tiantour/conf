@@ -27,6 +27,7 @@ type data struct {
 	Liquid
 	Mafengwo
 	Mchpay
+	Nats
 	Next
 	Point
 	Power
