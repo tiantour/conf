@@ -29,4 +29,5 @@ type power struct {
 	Min      float64  `toml:"min"`      // 最大
 	Max      float64  `toml:"max"`      // 最小
 	Warning  float64  `toml:"warning"`  // 报警
+	Compute  string   `toml:"compute"`  // 计算
 }
