@@ -17,8 +17,9 @@ type server struct {
 	IP      string  `toml:"ip"`      // 地址
 	Uname   string  `toml:"uname"`   // 用户
 	Passwd  string  `toml:"passwd"`  // 密码
-	Uint    string  `toml:"unit"`    // 单位
 	Min     float64 `toml:"min"`     // 最大
 	Max     float64 `toml:"max"`     // 最小
-	Warning float64 `toml:"warning"` // 报警
+	Uint    string  `toml:"unit"`    // 单位
+	Notice  string  `toml:"notice"`  // 通知
+	Compute string  `toml:"compute"` // 计算
 }

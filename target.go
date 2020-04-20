@@ -16,8 +16,9 @@ type target struct {
 	Port      string  `toml:"port"`      // 端口
 	IP        string  `toml:"ip"`        // 地址
 	Community string  `toml:"community"` // 社区
-	Uint      string  `toml:"unit"`      // 单位
 	Min       float64 `toml:"min"`       // 最大
 	Max       float64 `toml:"max"`       // 最小
-	Warning   float64 `toml:"warning"`   // 报警
+	Uint      string  `toml:"unit"`      // 单位
+	Notice    string  `toml:"notice"`    // 通知
+	Compute   string  `toml:"compute"`   // 计算
 }

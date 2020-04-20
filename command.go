@@ -19,5 +19,5 @@ type command struct {
 	Value    []byte `toml:"value"`    // 数值
 	Uname    string `toml:"uname"`    // 用户
 	Passwd   string `toml:"passwd"`   // 密码
-	Code     string `toml:"cmd"`      // 命令
+	Code     string `toml:"code"`     // 命令
 }
