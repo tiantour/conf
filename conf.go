@@ -21,6 +21,7 @@ type data struct {
 	DB
 	Ethernet
 	Gear
+	Gotour
 	GPIO
 	IDC
 	Image
