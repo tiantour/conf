@@ -2,7 +2,7 @@ package conf
 
 // Service service
 type Service struct {
-	Data service `toml:"service"`
+	Data map[string]service `toml:"service"`
 }
 
 // NewService new service
@@ -11,9 +11,7 @@ func NewService() *Service {
 }
 
 type service struct {
-	Liquid string `toml:"liquid"` // 液冷
-	Power  string `toml:"power"`  // 动环
-	Sensor string `toml:"sensor"` // 传感器
-	Server string `toml:"server"` // 服务器
-	Trade  string `toml:"trade"`  // 交易
+	Domain string `toml:"domain"` // 域名
+	IP     string `toml:"ip"`     // 地址
+	Port   string `toml:"port"`   // 端口
 }
