@@ -11,7 +11,6 @@ func NewService() *Service {
 }
 
 type service struct {
-	Domain string `toml:"domain"` // 域名
-	IP     string `toml:"ip"`     // 地址
-	Port   string `toml:"port"`   // 端口
+	Origin string `toml:"origin"` // 域名
+	Target string `toml:"target"` // 地址
 }
