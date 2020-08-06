@@ -12,8 +12,9 @@ func NewIDC() *IDC {
 
 // idc idc
 type idc struct {
-	Number   int32  `toml:"number"`   // 编号
-	Name     string `toml:"name"`     // 名称
-	Phone    string `toml:"phone"`    // 电话
-	Template string `toml:"template"` // 机柜
+	Number   int32    `toml:"number"`   // 编号
+	Name     string   `toml:"name"`     // 名称
+	Interval int32    `toml:"interval"` // 间隔
+	Phone    []string `toml:"phone"`    // 电话
+	Template string   `toml:"template"` // 机柜
 }
