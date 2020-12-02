@@ -20,6 +20,7 @@ type data struct {
 	Command
 	DB
 	Ethernet
+	Gateway
 	Gear
 	GPIO
 	IDC
