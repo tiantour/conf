@@ -39,6 +39,7 @@ type data struct {
 	Service
 	Target
 	Token
+	Umspay
 	Weather
 	Wechat
 	Weibo
