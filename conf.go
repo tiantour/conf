@@ -33,6 +33,7 @@ type data struct {
 	Power
 	Qiniu
 	QQ
+	Scene
 	Sensor
 	Serial
 	Server
