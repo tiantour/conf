@@ -11,6 +11,8 @@ func NewScene() *Scene {
 }
 
 type scene struct {
+	Name        string   `json:"name"`        // 名称
+	Phone       []string `toml:"phone"`       // 电话
 	PUE         string   `toml:"pue"`         // pue
 	CPU         string   `toml:"cpu"`         // 芯片
 	System      string   `toml:"system"`      // 系统
@@ -21,5 +23,4 @@ type scene struct {
 	Export      string   `toml:"export"`      // 出口
 	Pressure    string   `toml:"pressure"`    // 压力
 	Difference  string   `toml:"difference"`  // 差值
-	Phone       []string `toml:"phone"`       // 电话
 }
