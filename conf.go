@@ -20,6 +20,7 @@ type data struct {
 	Command
 	DB
 	Ethernet
+	Future
 	Gateway
 	Gear
 	GPIO
