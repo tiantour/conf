@@ -13,13 +13,13 @@ func NewService() *Service {
 type service struct {
 	Account  string `toml:"account"`  // 帐号
 	Article  string `toml:"article"`  // 文章
-	Box      string `toml:"box"`      // 盒子
+	Box      string `toml:"box"`      // 服务
 	Changer  string `toml:"changer"`  // 兑换
 	Control  string `toml:"control"`  // 控制
 	Discount string `toml:"discount"` // 折扣
-	Favorite string `toml:"favorite"` // 收藏
 	Goods    string `toml:"goods"`    // 商品
 	Group    string `toml:"group"`    // 出团
+	Kit      string `toml:"kit"`      // 工具
 	Lucky    string `toml:"lucky"`    // 抽奖
 	Message  string `toml:"message"`  // 消息
 	Monitor  string `toml:"monitor"`  // 监控
