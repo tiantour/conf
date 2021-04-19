@@ -2,7 +2,7 @@ package conf
 
 // Ipmi ipmi
 type Ipmi struct {
-	Ipmi []*IpmiItem `toml:"ipmi"`
+	Data []*IpmiItem `toml:"ipmi"`
 }
 
 // NewIpmi new ipmi
