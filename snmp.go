@@ -1,7 +1,7 @@
 package conf
 
 type Snmp struct {
-	Data []*snmp `toml:"snmp"`
+	Data []*SnmpItem `toml:"snmp"`
 }
 
 // NewSnmp new snmp
@@ -9,8 +9,8 @@ func NewSnmp() *Snmp {
 	return &conf.Snmp
 }
 
-// snmp snmp
-type snmp struct {
+// Snmp snmp item
+type SnmpItem struct {
 	Model     int32  `toml:"model"`     // 型号
 	Device    string `toml:"device"`    // 设备
 	Port      string `toml:"port"`      // 端口
