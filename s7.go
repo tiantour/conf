@@ -1,17 +1,16 @@
 package conf
 
-// Next next
-type Next struct {
-	Data []next `toml:"next"`
+// S7 s7
+type S7 struct {
+	Data []*s7 `toml:"s7"`
 }
 
-// NewNext new next
-func NewNext() *Next {
-	return &conf.Next
+// NewS7 new s7
+func NewS7() *S7 {
+	return &conf.S7
 }
 
-// next next
-type next struct {
+type s7 struct {
 	Model      int32    `toml:"model"`      // 型号
 	Device     string   `toml:"device"`     // 设备
 	Port       string   `toml:"port"`       // 端口
@@ -29,9 +28,5 @@ type next struct {
 	Decimal    uint16   `toml:"decimal"`    // 小数
 	Plus       float64  `toml:"plus"`       // 加法
 	Times      float64  `toml:"times"`      // 乘法
-	Min        float64  `toml:"min"`        // 最大
-	Max        float64  `toml:"max"`        // 最小
 	Uint       string   `toml:"unit"`       // 单位
-	Notice     string   `toml:"notice"`     // 通知
-	Compute    string   `toml:"compute"`    // 计算
 }

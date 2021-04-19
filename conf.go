@@ -19,27 +19,20 @@ type data struct {
 	CB
 	Command
 	DB
-	Ethernet
-	Future
 	Gateway
-	Gear
-	GPIO
 	IDC
 	Image
-	Liquid
+	Ipmi
 	Mafengwo
 	Mchpay
-	Next
-	Point
-	Power
+	Modbus
 	Qiniu
 	QQ
 	Scene
-	Sensor
+	S7
 	Serial
-	Server
 	Service
-	Target
+	Snmp
 	Token
 	Umspay
 	Weather

@@ -1,19 +1,19 @@
 package conf
 
-// Future future
-type Future struct {
-	Data []future `toml:"future"`
+// Modbus modbus
+type Modbus struct {
+	Data []*modbus `toml:"modbus"`
 }
 
-// NewFuture new future
-func NewFuture() *Future {
-	return &conf.Future
+// NewModbus new modbus
+func NewModbus() *Modbus {
+	return &conf.Modbus
 }
 
-type future struct {
+type modbus struct {
 	Model      int32    `toml:"model"`      // 型号
 	Device     string   `toml:"device"`     // 设备
-	IP         string   `toml:"ip"`         // 地址
+	Port       string   `toml:"port"`       // 端口
 	SlaveID    byte     `toml:"slaveid"`    // 站号
 	Function   uint16   `toml:"function"`   // 功能
 	Name       []string `toml:"name"`       // 名字
@@ -27,9 +27,5 @@ type future struct {
 	Decimal    uint16   `toml:"decimal"`    // 小数
 	Plus       float64  `toml:"plus"`       // 加法
 	Times      float64  `toml:"times"`      // 乘法
-	Min        float64  `toml:"min"`        // 最大
-	Max        float64  `toml:"max"`        // 最小
 	Uint       string   `toml:"unit"`       // 单位
-	Notice     string   `toml:"notice"`     // 通知
-	Compute    string   `toml:"compute"`    // 计算
 }
