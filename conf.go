@@ -26,6 +26,7 @@ type data struct {
 	Mafengwo
 	Mchpay
 	Modbus
+	Nats
 	Qiniu
 	QQ
 	Scene
