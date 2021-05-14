@@ -20,13 +20,13 @@ type data struct {
 	Command
 	DB
 	Gateway
+	Gpio
 	IDC
 	Image
 	Ipmi
 	Mafengwo
 	Mchpay
 	Modbus
-	Nats
 	Qiniu
 	QQ
 	Scene
