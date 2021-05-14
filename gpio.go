@@ -11,9 +11,8 @@ func NewGpio() *Gpio {
 }
 
 type GpioItem struct {
-	Model   int32  `toml:"model"`   // 型号
-	Device  string `toml:"device"`  // 设备
-	Name    string `toml:"name"`    // 名字
-	Address uint16 `toml:"address"` // 地址
-	Uint    string `toml:"unit"`    // 单位
+	Model  int32  `toml:"model"`  // 型号
+	Device string `toml:"device"` // 设备
+	Name   string `toml:"name"`   // 名字
+	Point  uint8  `toml:"point"`  // 地址
 }

@@ -20,4 +20,6 @@ type command struct {
 	Uname    string `toml:"uname"`    // 用户
 	Passwd   string `toml:"passwd"`   // 密码
 	Code     string `toml:"code"`     // 命令
+	Point    uint8  `toml:"point"`    // 地址
+	State    uint8  `toml:"state"`    // 状态
 }
