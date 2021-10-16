@@ -40,6 +40,7 @@ type data struct {
 	Wechat
 	Weibo
 	Wxpay
+	Wxwork
 }
 
 func init() {
