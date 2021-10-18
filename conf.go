@@ -22,7 +22,6 @@ type data struct {
 	Gateway
 	Gpio
 	IDC
-	Image
 	Ipmi
 	Mafengwo
 	Mchpay
