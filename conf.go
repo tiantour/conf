@@ -25,7 +25,8 @@ type data struct {
 	Ipmi
 	Mafengwo
 	Mchpay
-	Modbus
+	ModbusRTU
+	ModbusTCP
 	Qiniu
 	QQ
 	Scene

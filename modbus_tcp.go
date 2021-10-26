@@ -1,16 +1,16 @@
 package conf
 
-// Modbus modbus
-type Modbus struct {
-	Data []*ModbusItem `toml:"modbus"`
+// ModbusTCP modbus tcp
+type ModbusTCP struct {
+	Data []*ModbusTCPItem `toml:"modbus_tcp"`
 }
 
-// NewModbus new modbus
-func NewModbus() *Modbus {
-	return &conf.Modbus
+// NewModbusTCP new modbus tcp
+func NewModbusTCP() *ModbusTCP {
+	return &conf.ModbusTCP
 }
 
-type ModbusItem struct {
+type ModbusTCPItem struct {
 	Model      int32    `toml:"model"`      // 型号
 	Device     string   `toml:"device"`     // 设备
 	Port       string   `toml:"port"`       // 端口
