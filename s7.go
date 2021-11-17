@@ -1,16 +1,6 @@
 package conf
 
-// S7 s7
 type S7 struct {
-	Data []*S7Item `toml:"s7"`
-}
-
-// NewS7 new s7
-func NewS7() *S7 {
-	return &conf.S7
-}
-
-type S7Item struct {
 	Model      int32    `toml:"model"`      // 型号
 	Device     string   `toml:"device"`     // 设备
 	Port       string   `toml:"port"`       // 端口

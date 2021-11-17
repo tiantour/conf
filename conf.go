@@ -19,21 +19,17 @@ type data struct {
 	CB
 	Command
 	DB
+	Ethernet
 	Gateway
-	Gpio
 	IDC
-	Ipmi
 	Mafengwo
 	Mchpay
-	ModbusRTU
-	ModbusTCP
+	Point
 	Qiniu
 	QQ
 	Scene
-	S7
 	Serial
 	Service
-	Snmp
 	Token
 	Umspay
 	Weather
