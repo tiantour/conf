@@ -1,7 +1,8 @@
 package conf
 
 type Point struct {
-	GPIO []*GPIO   `toml:"gpio"` // gpio
+	DI   []*DI     `toml:"di"`   // di
+	DO   []*DO     `toml:"do"`   // do
 	IPMI []*IPMI   `toml:"ipmi"` // ipmi
 	RTU  []*Modbus `toml:"rtu"`  // modbus rtu
 	S7   []*S7     `toml:"s7"`   // s7
