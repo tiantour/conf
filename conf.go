@@ -21,7 +21,6 @@ type data struct {
 	DB
 	Ethernet
 	Gateway
-	GPIO
 	IDC
 	Mafengwo
 	Mchpay
