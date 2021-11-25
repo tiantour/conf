@@ -17,5 +17,6 @@ type Modbus struct {
 	Decimal    uint16   `toml:"decimal"`    // 小数
 	Plus       float64  `toml:"plus"`       // 加法
 	Times      float64  `toml:"times"`      // 乘法
+	Negate     int      `toml:"negate"`     // 取值
 	Uint       string   `toml:"unit"`       // 单位
 }
