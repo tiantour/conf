@@ -19,8 +19,8 @@ type scene struct {
 	Temperature string   `toml:"temperature"` // 温度
 	Humidity    string   `toml:"humidity"`    // 湿度
 	Noise       string   `toml:"noise"`       // 噪音
-	Import      string   `toml:"import"`      // 进口
-	Export      string   `toml:"export"`      // 出口
-	Pressure    string   `toml:"pressure"`    // 压力
-	Difference  string   `toml:"difference"`  // 差值
+	Import      []string `toml:"import"`      // 进口
+	Export      []string `toml:"export"`      // 出口
+	Pressure    []string `toml:"pressure"`    // 压力
+	Difference  []string `toml:"difference"`  // 差值
 }
