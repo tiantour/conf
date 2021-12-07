@@ -4,6 +4,7 @@ type Modbus struct {
 	Model      int32    `toml:"model"`      // 型号
 	Device     string   `toml:"device"`     // 设备
 	Port       string   `toml:"port"`       // 端口
+	IP         string   `toml:"ip"`         // 地址
 	SlaveID    byte     `toml:"slaveid"`    // 站号
 	Function   uint16   `toml:"function"`   // 功能
 	Name       []string `toml:"name"`       // 名字
