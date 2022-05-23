@@ -2,24 +2,6 @@ package conf
 
 // Service service
 type Service struct {
-	Account  string `toml:"account"`  // 帐号
-	Article  string `toml:"article"`  // 文章
-	Box      string `toml:"box"`      // 服务
-	Changer  string `toml:"changer"`  // 兑换
-	Control  string `toml:"control"`  // 控制
-	Discount string `toml:"discount"` // 折扣
-	Goods    string `toml:"goods"`    // 商品
-	Group    string `toml:"group"`    // 出团
-	Kit      string `toml:"kit"`      // 工具
-	Lucky    string `toml:"lucky"`    // 抽奖
-	Message  string `toml:"message"`  // 消息
-	Monitor  string `toml:"monitor"`  // 监控
-	Order    string `toml:"order"`    // 订单
-	Paper    string `toml:"paper"`    // 问卷
-	Product  string `toml:"product"`  // 产品
-	Stock    string `toml:"stock"`    // 库存
-	Ticket   string `toml:"ticket"`   // 票务
-	Trade    string `toml:"trade"`    // 交易
-	Vip      string `toml:"vip"`      // 会员
-	Voyager  string `toml:"voyager"`  // 讲解
+	Name   string
+	Origin string
 }

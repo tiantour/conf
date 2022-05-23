@@ -11,12 +11,20 @@ import (
 	"github.com/tiantour/conf/v2/x"
 )
 
-var config Config
+const (
+	_TYPE = "toml"
+	_NAME = "common"
+)
+
+var (
+	config Config
+	name   = []string{"token", "gateway", "service", "cache", "db"}
+)
 
 type Config struct {
-	Token   Token   `toml:"token"`   // token
-	Gateway Gateway `toml:"gateway"` // gateway
-	Service Service `toml:"service"` // service
+	Token   Token              `toml:"token"`   // token
+	Gateway Gateway            `toml:"gateway"` // gateway
+	Service map[string]Service `toml:"service"` // service
 
 	Cache map[string]storage.Cache `toml:"cache"` // cache
 	DB    map[string]storage.DB    `toml:"db"`    // db
@@ -48,20 +56,20 @@ type Config struct {
 	Weather  map[string]x.Weather  `toml:"weather"`  // weather
 }
 
-func New(path, name string, args ...string) {
+func New(path string, name ...string) {
 	v := viper.New()
-	v.SetConfigType("toml")
+	v.SetConfigType(_TYPE)
+	v.SetConfigName(_NAME)
 	v.AddConfigPath(path)
-	v.SetConfigName(name)
 
 	err := v.ReadInConfig()
 	if err != nil {
 		log.Fatalf("read config err: %v", err)
 	}
 
-	for _, item := range args {
+	for _, item := range name {
 		v.SetConfigName(item)
-		err = v.MergeInConfig()
+		err := v.MergeInConfig()
 		if err != nil {
 			log.Fatalf("merge config err: %v", err)
 		}
