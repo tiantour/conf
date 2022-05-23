@@ -1,4 +1,4 @@
-module github.com/tiantour/conf
+module github.com/tiantour/conf/v2
 
 go 1.18
 
