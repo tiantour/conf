@@ -2,15 +2,6 @@ package conf
 
 // Service service
 type Service struct {
-	Data service `toml:"service"`
-}
-
-// NewService new service
-func NewService() *Service {
-	return &conf.Service
-}
-
-type service struct {
 	Account  string `toml:"account"`  // 帐号
 	Article  string `toml:"article"`  // 文章
 	Box      string `toml:"box"`      // 服务

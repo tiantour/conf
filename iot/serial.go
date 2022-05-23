@@ -1,16 +1,7 @@
-package conf
+package iot
 
 // Serial serial
 type Serial struct {
-	Data map[string]serial `toml:"serial"`
-}
-
-// NewSerial new serial
-func NewSerial() *Serial {
-	return &conf.Serial
-}
-
-type serial struct {
 	Address  string `toml:"address"`  // 地址
 	BaudRate int    `toml:"baudrate"` // 波特率
 	DataBits int    `toml:"databits"` // 数据位

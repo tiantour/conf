@@ -1,16 +1,7 @@
-package conf
+package iot
 
 // Scene scene
 type Scene struct {
-	Data map[string]scene `toml:"scene"`
-}
-
-// NewScene new scene
-func NewScene() *Scene {
-	return &conf.Scene
-}
-
-type scene struct {
 	Name        string   `json:"name"`        // 名称
 	Phone       []string `toml:"phone"`       // 电话
 	PUE         string   `toml:"pue"`         // pue

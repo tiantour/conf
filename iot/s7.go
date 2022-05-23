@@ -1,4 +1,4 @@
-package conf
+package iot
 
 type S7 struct {
 	Model      int32    `toml:"model"`      // 型号

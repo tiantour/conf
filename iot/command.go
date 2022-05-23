@@ -1,16 +1,7 @@
-package conf
+package iot
 
 // Command command
 type Command struct {
-	Data map[string]command `toml:"command"`
-}
-
-// NewCommand new command
-func NewCommand() *Command {
-	return &conf.Command
-}
-
-type command struct {
 	SlaveID  byte   `toml:"slaveid"`  // 站号 modbus
 	Slot     int    `toml:"slot"`     // 插槽 s7
 	Function uint16 `toml:"function"` // 功能 modbus&s7

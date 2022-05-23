@@ -1,4 +1,4 @@
-package conf
+package iot
 
 // Snmp snmp
 type Snmp struct {

@@ -1,4 +1,4 @@
-package conf
+package iot
 
 // GPIO gpio
 type GPIO struct {
