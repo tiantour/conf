@@ -2,10 +2,10 @@ package iot
 
 // Serial serial
 type Serial struct {
-	Address  string `mapstructure:"address"`  // 地址
-	BaudRate int    `mapstructure:"baudrate"` // 波特率
-	DataBits int    `mapstructure:"databits"` // 数据位
-	Parity   string `mapstructure:"parity"`   // 校验位
-	StopBits int    `mapstructure:"stopbits"` // 停止位
-	SlaveID  []byte `mapstructure:"slaveid"`  // 站号
+	Address  string // 地址
+	BaudRate int    // 波特率
+	DataBits int    // 数据位
+	Parity   string // 校验位
+	StopBits int    // 停止位
+	SlaveID  []byte // 站号
 }

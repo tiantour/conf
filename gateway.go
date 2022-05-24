@@ -2,5 +2,5 @@ package conf
 
 // Gateway gateway
 type Gateway struct {
-	Origin string `mapstructure:"origin"` // 域名
+	Origin string // 域名
 }
