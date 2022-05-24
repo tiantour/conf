@@ -18,12 +18,11 @@ const (
 
 var (
 	config Config
-	name   = []string{"token", "gateway", "service", "cache", "db"}
 )
 
 type Config struct {
-	Token   Token              `toml:"token"`   // token
-	Gateway Gateway            `toml:"gateway"` // gateway
+	Token   map[string]Token   `toml:"token"`   // token
+	Gateway map[string]Gateway `toml:"gateway"` // gateway
 	Service map[string]Service `toml:"service"` // service
 
 	Cache map[string]storage.Cache `toml:"cache"` // cache
