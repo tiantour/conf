@@ -2,6 +2,6 @@ package union
 
 // QQ qq
 type QQ struct {
-	AppID  string `toml:"app_id"`  // 编号
-	AppKey string `toml:"app_key"` // 键值
+	AppID  string `mapstructure:"app_id"`  // 编号
+	AppKey string `mapstructure:"app_key"` // 键值
 }

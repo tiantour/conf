@@ -21,38 +21,38 @@ var (
 )
 
 type Config struct {
-	Token   map[string]Token   `toml:"token"`   // token
-	Gateway map[string]Gateway `toml:"gateway"` // gateway
-	Service map[string]Service `toml:"service"` // service
+	Token   map[string]Token   `mapstructure:"token"`   // token
+	Gateway map[string]Gateway `mapstructure:"gateway"` // gateway
+	Service map[string]Service `mapstructure:"service"` // service
 
-	Cache map[string]storage.Cache `toml:"cache"` // cache
-	DB    map[string]storage.DB    `toml:"db"`    // db
+	Cache map[string]storage.Cache `mapstructure:"cache"` // cache
+	DB    map[string]storage.DB    `mapstructure:"db"`    // db
 
-	IDC      map[string]iot.IDC      `toml:"idc"`      // idc
-	Ethernet map[string]iot.Ethernet `toml:"ethernet"` // ethernet
-	Serial   map[string]iot.Serial   `toml:"serial"`   // serial
-	Command  map[string]iot.Command  `toml:"command"`  // command
-	GPIO     []*iot.GPIO             `toml:"gpio"`     // gpio
-	IPMI     []*iot.IPMI             `toml:"ipmi"`     // ipmi
-	RTU      []*iot.Modbus           `toml:"rtu"`      // modbus rtu
-	S7       []*iot.S7               `toml:"s7"`       // s7
-	Snmp     []*iot.Snmp             `toml:"snmp"`     // snmp
-	TCP      []*iot.Modbus           `toml:"tcp"`      // modbus tcp
+	IDC      map[string]iot.IDC      `mapstructure:"idc"`      // idc
+	Ethernet map[string]iot.Ethernet `mapstructure:"ethernet"` // ethernet
+	Serial   map[string]iot.Serial   `mapstructure:"serial"`   // serial
+	Command  map[string]iot.Command  `mapstructure:"command"`  // command
+	GPIO     []*iot.GPIO             `mapstructure:"gpio"`     // gpio
+	IPMI     []*iot.IPMI             `mapstructure:"ipmi"`     // ipmi
+	RTU      []*iot.Modbus           `mapstructure:"rtu"`      // modbus rtu
+	S7       []*iot.S7               `mapstructure:"s7"`       // s7
+	Snmp     []*iot.Snmp             `mapstructure:"snmp"`     // snmp
+	TCP      []*iot.Modbus           `mapstructure:"tcp"`      // modbus tcp
 
-	Alipay map[string]trade.Alipay `toml:"alipay"` // alipay
-	Mchpay map[string]trade.Mchpay `toml:"mchpay"` // mchpay
-	Umspay map[string]trade.Umspay `toml:"umspay"` // umspay
-	Wxpay  map[string]trade.Wxpay  `toml:"wxpay"`  // wxpay
+	Alipay map[string]trade.Alipay `mapstructure:"alipay"` // alipay
+	Mchpay map[string]trade.Mchpay `mapstructure:"mchpay"` // mchpay
+	Umspay map[string]trade.Umspay `mapstructure:"umspay"` // umspay
+	Wxpay  map[string]trade.Wxpay  `mapstructure:"wxpay"`  // wxpay
 
-	QQ     map[string]union.QQ     `toml:"qq"`     // qq
-	Wechat map[string]union.Wechat `toml:"wechat"` // wechat
-	Weibo  map[string]union.Weibo  `toml:"weibo"`  // weibo
-	Wxwork map[string]union.Wxwork `toml:"wxwork"` // wxwork
+	QQ     map[string]union.QQ     `mapstructure:"qq"`     // qq
+	Wechat map[string]union.Wechat `mapstructure:"wechat"` // wechat
+	Weibo  map[string]union.Weibo  `mapstructure:"weibo"`  // weibo
+	Wxwork map[string]union.Wxwork `mapstructure:"wxwork"` // wxwork
 
-	Aliyun   map[string]x.Aliyun   `toml:"aliyun"`   // aliyun
-	Mafengwo map[string]x.Mafengwo `toml:"mafengwo"` // mafengwo
-	Qiniu    map[string]x.Qiniu    `toml:"qiniu"`    // qiniu
-	Weather  map[string]x.Weather  `toml:"weather"`  // weather
+	Aliyun   map[string]x.Aliyun   `mapstructure:"aliyun"`   // aliyun
+	Mafengwo map[string]x.Mafengwo `mapstructure:"mafengwo"` // mafengwo
+	Qiniu    map[string]x.Qiniu    `mapstructure:"qiniu"`    // qiniu
+	Weather  map[string]x.Weather  `mapstructure:"weather"`  // weather
 }
 
 func New(path string, name ...string) {

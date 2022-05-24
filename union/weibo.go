@@ -2,6 +2,6 @@ package union
 
 // Weibo weibo
 type Weibo struct {
-	AppID     string `toml:"app_id"`     // 编号
-	AppSecret string `toml:"app_secret"` // 密钥
+	AppID     string `mapstructure:"app_id"`     // 编号
+	AppSecret string `mapstructure:"app_secret"` // 密钥
 }
