@@ -2,6 +2,6 @@ package storage
 
 // DB db
 type DB struct {
-	Driver string // dirver
-	Source string // source
+	Driver string `mapstructure:"driver"` // dirver
+	Source string `mapstructure:"source"` // source
 }

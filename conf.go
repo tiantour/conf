@@ -5,39 +5,26 @@ import (
 
 	"github.com/spf13/viper"
 	"github.com/tiantour/conf/v2/iot"
+	"github.com/tiantour/conf/v2/iot/port"
+	"github.com/tiantour/conf/v2/iot/protocol"
 	"github.com/tiantour/conf/v2/storage"
 	"github.com/tiantour/conf/v2/trade"
 	"github.com/tiantour/conf/v2/union"
 	"github.com/tiantour/conf/v2/x"
 )
 
-const (
-	_TYPE = "toml"
-	_NAME = "common"
-)
-
 var (
-	config Config
+	// Path path
+	Path string
+
+	// Data data
+	Data *Config
 )
 
 type Config struct {
-	Token   map[string]Token   // token
-	Gateway map[string]Gateway // gateway
-	Service map[string]Service // service
-
+	Token map[string]Token         // token
 	Cache map[string]storage.Cache // cache
 	DB    map[string]storage.DB    // db
-
-	IDC      map[string]iot.IDC      // idc
-	Ethernet map[string]iot.Ethernet // ethernet
-	Serial   map[string]iot.Serial   // serial
-	Command  map[string]iot.Command  // command
-	GPIO     []*iot.GPIO             // gpio
-	IPMI     []*iot.IPMI             // ipmi
-	RTU      []*iot.Modbus           // modbus rtu
-	S7       []*iot.S7               // s7
-	Snmp     []*iot.Snmp             // snmp
-	TCP      []*iot.Modbus           // modbus tcp
 
 	Alipay map[string]trade.Alipay // alipay
 	Mchpay map[string]trade.Mchpay // mchpay
@@ -52,21 +39,35 @@ type Config struct {
 	Aliyun   map[string]x.Aliyun   // aliyun
 	Mafengwo map[string]x.Mafengwo // mafengwo
 	Qiniu    map[string]x.Qiniu    // qiniu
-	Weather  map[string]x.Weather  // weather
+	Gateway  map[string]x.Gateway  // gateway
+	Service  map[string]x.Service  // service
+
+	IDC      map[string]iot.IDC       // idc
+	Scene    map[string]iot.Scene     // scene
+	Command  map[string]iot.Command   // command
+	Ethernet map[string]port.Ethernet // ethernet
+	Serial   map[string]port.Serial   // serial
+	GPIO     []*port.GPIO             // gpio
+	IPMI     []*protocol.IPMI         // ipmi
+	RTU      []*protocol.Modbus       // modbus rtu
+	S7       []*protocol.S7           // s7
+	Snmp     []*protocol.Snmp         // snmp
+	TCP      []*protocol.Modbus       // modbus tcp
 }
 
-func New(path string, name ...string) {
+func New(args ...string) {
 	v := viper.New()
-	v.SetConfigType(_TYPE)
-	v.SetConfigName(_NAME)
-	v.AddConfigPath(path)
+	v.SetConfigName("common")
+	v.SetConfigType("toml")
+	v.AddConfigPath(".")
+	v.AddConfigPath(Path)
 
 	err := v.ReadInConfig()
 	if err != nil {
 		log.Fatalf("read config err: %v", err)
 	}
 
-	for _, item := range name {
+	for _, item := range args {
 		v.SetConfigName(item)
 		err := v.MergeInConfig()
 		if err != nil {
@@ -74,12 +75,8 @@ func New(path string, name ...string) {
 		}
 	}
 
-	err = v.Unmarshal(&config)
+	err = v.Unmarshal(&Data)
 	if err != nil {
 		log.Fatalf("parse config err: %v", err)
 	}
-}
-
-func NewConfig() *Config {
-	return &config
 }

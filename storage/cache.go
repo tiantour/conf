@@ -2,6 +2,6 @@ package storage
 
 // Cache cache
 type Cache struct {
-	Network string // network
-	Address string // address
+	Network string `mapstructure:"network"` // network
+	Address string `mapstructure:"address"` // address
 }
