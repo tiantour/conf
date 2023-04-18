@@ -1,4 +1,4 @@
-package x
+package conf
 
 // Gateway gateway
 type Gateway struct {

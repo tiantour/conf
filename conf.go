@@ -22,7 +22,9 @@ var (
 )
 
 type Config struct {
-	Token map[string]Token         // token
+	Gateway map[string]Gateway // gateway
+	Token   map[string]Token   // token
+
 	Cache map[string]storage.Cache // cache
 	DB    map[string]storage.DB    // db
 
@@ -39,8 +41,6 @@ type Config struct {
 	Aliyun   map[string]x.Aliyun   // aliyun
 	Mafengwo map[string]x.Mafengwo // mafengwo
 	Qiniu    map[string]x.Qiniu    // qiniu
-	Gateway  map[string]x.Gateway  // gateway
-	Service  map[string]x.Service  // service
 
 	IDC      map[string]iot.IDC       // idc
 	Scene    map[string]iot.Scene     // scene
@@ -79,4 +79,12 @@ func New(args ...string) {
 	if err != nil {
 		log.Fatalf("parse config err: %v", err)
 	}
+
+	// v.OnConfigChange(func(in fsnotify.Event) {
+	// 	err = v.Unmarshal(&Data)
+	// 	if err != nil {
+	// 		log.Fatalf("parse config err: %v", err)
+	// 	}
+	// })
+	// v.WatchConfig()
 }
